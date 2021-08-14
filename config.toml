@@ -1,0 +1,75 @@
+baseURL = "https://samyaks.xyz"
+languageCode = "en-us"
+title = "Samyak Sarnayak"
+
+theme = "gruvhugo"
+
+paginate = "10" # Number of posts per page
+
+
+# from gruvhugo
+[taxonomies]
+  tag      = "tags"
+  category = "categories"
+  series   = "series"
+
+[params.main]
+  enabled = true
+  enableKatex = true
+  metaKeywords = "Samyak, Sarnayak, PES, Software"
+  headerTitle = "Samyak Sarnayak"
+  copyright = "© 2021 Samyak Sarnayak.  <a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/\">Some rights reserved</a>."
+  name = "samyak_sarnayak"
+  img = "images/mob.png"
+  # Thanks to Christina @ wocintechchat.com for this photo.
+  icon = "img/logo.png"
+  quote = "A nice quote that you like that describes the beautiful person you are."
+  description= "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam. Quis risus sed vulputate odio ut. Sed turpis tincidunt id aliquet risus feugiat in ante metus. Bibendum at varius vel pharetra vel turpis. Semper viverra nam libero justo laoreet sit amet cursus. Mauris a diam maecenas sed enim ut sem."
+  licenseUrl = ""
+
+ # Social icons
+  [[params.social]]
+    name = "github"
+    url  = "https://github.com/Samyak2"
+
+  # [[params.social]]
+  #   name = "gitlab"
+  #   url  = "https://gitlab.com/samyaks"
+
+  [[params.social]]
+    name = "email"
+    url  = "mailto:samyak201@gmail.com"
+
+  # [[params.social]]
+  #   name = "gpg"
+  #   url  = "https://keys.openpgp.org/"
+
+  [[params.social]]
+    name = "twitter"
+    url  = "https://twitter.com/Samyak210"
+
+  [[params.social]]
+    name = "linkedin"
+    url  = "https://www.linkedin.com/in/samyaks"
+
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name       = "About"
+    url        = "about"
+
+  [[menu.main]]
+    identifier = "posts"
+    name       = "Posts"
+    url        = "post/"
+
+  [[menu.main]]
+    identifier = "projects"
+    name       = "Projects"
+    url        = "projects"
+
+  [[menu.main]]
+    identifier = "cv"
+    name       = "CV"
+    url        = "cv.pdf"
+
