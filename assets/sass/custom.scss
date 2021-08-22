@@ -1,0 +1,48 @@
+// TODO: change the "nav a" colors
+
+.nav {
+    --hover-link-color: #076678;
+    --link-text-color: #454545;
+    a {
+        padding: 10px 20px;
+        // background: inear-gradient(45deg,#5c6bc0 0%,#26418f 100%);
+        // border: 2px solid #076678;
+        // border-radius: 5px;
+
+        background: transparent;
+        border: none;
+
+        display: inline-flex;
+        flex-direction: column;
+        color: var(--link-text-color);
+
+        transition: color 0.5s ease-in-out;
+    }
+    a:hover {
+        padding: 10px 20px;
+
+        background: transparent;
+        border: none;
+        animation: none;
+
+        // color: var(--link-text-color);
+    }
+
+    a:hover::after {
+        border: 2px solid var(--hover-link-color);
+    }
+
+    a::after {
+        content: " ";
+        border: 2px solid #e0e0e0;
+        border-radius: 2px;
+        transition: border 0.5s ease-in-out;
+    }
+}
+
+body.dark .nav {
+    --link-text-color: white;
+    a {
+        --hover-link-color: #076678;
+    }
+}

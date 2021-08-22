@@ -21,7 +21,6 @@ paginate = "10" # Number of posts per page
   copyright = "© 2021 Samyak Sarnayak.  <a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/\">Some rights reserved</a>."
   name = "samyak_sarnayak"
   img = "images/mob.png"
-  # Thanks to Christina @ wocintechchat.com for this photo.
   icon = "img/logo.png"
   quote = "A nice quote that you like that describes the beautiful person you are."
   description= "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam. Quis risus sed vulputate odio ut. Sed turpis tincidunt id aliquet risus feugiat in ante metus. Bibendum at varius vel pharetra vel turpis. Semper viverra nam libero justo laoreet sit amet cursus. Mauris a diam maecenas sed enim ut sem."
@@ -51,6 +50,9 @@ paginate = "10" # Number of posts per page
   [[params.social]]
     name = "linkedin"
     url  = "https://www.linkedin.com/in/samyaks"
+
+[params.style]
+  custom_scss = ["/sass/custom.scss"]
 
 [menu]
   [[menu.main]]
