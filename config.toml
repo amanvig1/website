@@ -6,6 +6,9 @@ theme = "gruvhugo"
 
 paginate = "10" # Number of posts per page
 
+# enable shortcodes like css.inline
+enableInlineShortcodes = true
+
 
 # from gruvhugo
 [taxonomies]
