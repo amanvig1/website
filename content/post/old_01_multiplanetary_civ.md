@@ -2,11 +2,12 @@
 title: "Multiplanetary civilisation?"
 date: 2020-01-17
 tags:
-  - space
-twitter_params: "data-theme='dark' data-align='center'"
+ - space
 slug: "multiplanetary"
 header:
     teaser: /assets/images/spacex-starhopper-starship-nasa-saturn-v-apollo-mk1-height-comparison.webp
+aliases:
+ - /blog/space/multiplanetary-civilisation/
 ---
 
 Elon Musk recently tweeted about the logistics requirements for a Multiplanetary civilisation.
