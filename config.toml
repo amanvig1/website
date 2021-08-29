@@ -79,3 +79,5 @@ enableInlineShortcodes = true
     name       = "CV"
     url        = "cv.pdf"
 
+[permalinks]
+  post = '/:section/:slug'

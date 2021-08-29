@@ -1,4 +1,26 @@
-// TODO: change the "nav a" colors
+// the Nunito font
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+
+// the Sacramento font
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Grandstander&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+html {
+    font-family: 'Nunito', sans-serif;
+}
+
+.title {
+    font-family: 'Sacramento', cursive;
+    font-size: 1.5em;
+    // font-family: 'Source Code Pro', monospace;
+    // font-family: 'Julius Sans One', sans-serif;
+}
 
 .nav {
     --hover-link-color: #076678;
@@ -48,6 +70,10 @@
     }
 }
 
+body.dark {
+    color: #dcdcdc;
+}
+
 body.dark .nav {
     --link-text-color: white;
     a {
@@ -80,4 +106,18 @@ body.dark .nav {
 body.dark .social {
     --social-link-hover-color: pink;
     --social-link-hover-border-color: #f78fa1;
+}
+
+.post-dets {
+    font-size: small;
+}
+
+.well {
+    h4 {
+        font-size: small;
+    }
+
+    h3 a.link {
+        color: #50bbcf;
+    }
 }

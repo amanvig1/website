@@ -2,13 +2,21 @@
 title: "Hello there!"
 date: 2021-08-28T23:36:15+05:30
 draft: true
+summary: "Welcome to my blog"
+slug: "first"
 ---
 
-Hello!
+Hi!
 {{< rawhtml >}}
 <img class="smol-logo" src="/img/logo.png" />
 {{< /rawhtml >}}
 
+
+I'm Samyak Sarnayak. This post is mostly a placeholder to test [Hugo](https://gohugo.io/) and the [gruvhugo](https://gitlab.com/avron/gruvhugo) theme.
+
+After porting over my old posts here, I have planned for a few more. Hopefully I will get to them soon.
+
+The [about](/about) page will be the first one to be filled here, after this one of course.
 
 {{< css.inline >}}
 <style>
