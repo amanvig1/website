@@ -8,6 +8,7 @@ header:
     teaser: /assets/images/spacex-starhopper-starship-nasa-saturn-v-apollo-mk1-height-comparison.webp
 aliases:
  - /blog/space/multiplanetary-civilisation/
+draft: false
 ---
 
 Elon Musk recently tweeted about the logistics requirements for a Multiplanetary civilisation.

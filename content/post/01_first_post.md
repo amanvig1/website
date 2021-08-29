@@ -1,9 +1,11 @@
 ---
 title: "Hello there!"
 date: 2021-08-28T23:36:15+05:30
-draft: true
+draft: false
 summary: "Welcome to my blog"
 slug: "first"
+tags:
+ - meta
 ---
 
 Hi!

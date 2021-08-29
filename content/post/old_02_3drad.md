@@ -1,10 +1,11 @@
 ---
 title: "My old games"
 date: 2020-02-03
-categories:
+tags:
  - gaming
 aliases:
  - /blog/gaming/my-old-games/
+draft: false
 ---
 
 When I was in school, about 6-7 years ago, I had found a new hobby and passion - making games.
