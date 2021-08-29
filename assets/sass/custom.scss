@@ -70,8 +70,13 @@ html {
     }
 }
 
+body {
+    --text-color: #454545;
+}
+
 body.dark {
-    color: #dcdcdc;
+    --text-color: #dcdcdc;
+    color: var(--text-color);
 }
 
 body.dark .nav {
@@ -120,4 +125,12 @@ body.dark .social {
     h3 a.link {
         color: #50bbcf;
     }
+}
+
+.tags .tag {
+    color: var(--text-color);
+    background: none;
+    border-style: double;
+    border-color: var(--text-color);
+    padding: 2px;
 }
