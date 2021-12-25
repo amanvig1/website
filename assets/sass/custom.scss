@@ -134,3 +134,37 @@ body.dark .social {
     border-color: var(--text-color);
     padding: 2px;
 }
+
+code {
+    background: initial;
+    color: revert;
+}
+
+// heading hover icon
+.hanchor {
+    color: var(--text-color);
+    text-decoration: none;
+    position: relative;
+    left: 0.5em;
+    font-size: 0.8em;
+    transition: opacity 0.2s ease-in-out 0.1s;
+    opacity: 0;
+}
+.hanchor:hover {
+    opacity: 100%;
+}
+h1, h2, h3, h4 {
+    a {
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        color: var(--text-color);
+        transition: text-decoration-color 0.2s ease-in-out 0.1s;
+    }
+
+    &:hover a {
+        text-decoration-color: var(--text-color);
+        i {
+            opacity: 100%;
+        }
+    }
+}
