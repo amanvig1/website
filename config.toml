@@ -27,7 +27,7 @@ enableInlineShortcodes = true
   img_title = "Mob-kun, traced by me over the original. Someday I will draw him myself."
   icon = "img/logo.png"
   quote = "...all you have to decide is what to do with the time that is given to you"
-  description= "Hello."
+  description= "Hello. I'm Samyak Sarnayak, a final year student at PES University and upcoming software engineer at Chaos Genius. Interested in systems and programming languages. Check out the below links to know more about me, read my blog or my CV ⬇️"
   licenseUrl = ""
 
  # Social icons
@@ -61,12 +61,12 @@ enableInlineShortcodes = true
 [menu]
   [[menu.main]]
     identifier = "about"
-    name       = "About"
+    name       = "About me"
     url        = "about"
 
   [[menu.main]]
     identifier = "posts"
-    name       = "Posts"
+    name       = "Blog"
     url        = "post/"
 
   [[menu.main]]
