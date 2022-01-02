@@ -23,7 +23,7 @@ html {
 }
 
 .nav {
-    --hover-link-color: #076678;
+    --hover-link-color: var(--link-color);
     --link-text-color: #454545;
 
     display: flex;
@@ -72,17 +72,27 @@ html {
 
 body {
     --text-color: #454545;
+    --insignificant-text-color: #6b6969;
+    --link-color: rgb(21, 94, 117);
 }
 
 body.dark {
     --text-color: #dcdcdc;
+    --link-color: rgb(147, 197, 253);
+    --insignificant-text-color: #a7a5a5;
     color: var(--text-color);
 }
 
 body.dark .nav {
     --link-text-color: white;
     a {
-        --hover-link-color: #076678;
+        --hover-link-color: var(--link-color);
+    }
+}
+
+p {
+    a {
+        color: var(--link-color);
     }
 }
 
@@ -123,16 +133,18 @@ body.dark .social {
     }
 
     h3 a.link {
-        color: #50bbcf;
+        color: var(--link-color);
     }
 }
 
 .tags .tag {
-    color: var(--text-color);
+    color: var(--insignificant-text-color);
     background: none;
-    border-style: double;
-    border-color: var(--text-color);
+    border-style: solid;
+    border-color: var(--insignificant-text-color);
     padding: 2px;
+    border-block-width: thin;
+    border-inline-width: thin;
 }
 
 code {
