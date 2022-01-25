@@ -26,8 +26,8 @@ enableInlineShortcodes = true
   img = "images/mob.png"
   img_title = "Mob-kun, traced by me over the original. Someday I will draw him myself."
   icon = "img/logo.png"
-  quote = "...all you have to decide is what to do with the time that is given to you"
-  description= "Hello. I'm Samyak Sarnayak, a final year student at PES University and upcoming software engineer at Chaos Genius. Interested in systems and programming languages. Check out the below links to know more about me, read my blog or my CV ⬇️"
+  quote = "🦏"
+  description= "Hello there. I'm Samyak Sarnayak. I like making things, mostly in software."
   licenseUrl = ""
 
  # Social icons
