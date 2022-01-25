@@ -125,6 +125,10 @@ body.dark .social {
 
 .post-dets {
     font-size: small;
+
+    .post-det-divider {
+        border-color: var(--text-color);
+    }
 }
 
 .well {
