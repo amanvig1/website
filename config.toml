@@ -58,6 +58,9 @@ enableInlineShortcodes = true
 [params.style]
   custom_scss = ["/sass/custom.scss"]
 
+[params.analytics]
+  goat_counter_link = "https://samyak.goatcounter.com/count"
+
 [menu]
   [[menu.main]]
     identifier = "about"
