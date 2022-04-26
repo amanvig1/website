@@ -157,30 +157,15 @@ code {
 }
 
 // heading hover icon
-.hanchor {
+.heading-anchor {
     color: var(--text-color);
     text-decoration: none;
-    position: relative;
-    left: 0.5em;
-    font-size: 0.8em;
+    // position: relative;
+    // left: 0.5em;
+    font-size: 1.2rem;
     transition: opacity 0.2s ease-in-out 0.1s;
-    opacity: 0;
+    opacity: 40%;
 }
-.hanchor:hover {
+.heading-anchor:hover {
     opacity: 100%;
-}
-h1, h2, h3, h4 {
-    a {
-        text-decoration: underline;
-        text-decoration-color: transparent;
-        color: var(--text-color);
-        transition: text-decoration-color 0.2s ease-in-out 0.1s;
-    }
-
-    &:hover a {
-        text-decoration-color: var(--text-color);
-        i {
-            opacity: 100%;
-        }
-    }
 }
