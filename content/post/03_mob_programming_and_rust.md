@@ -58,11 +58,11 @@ Dawn had a [nice discussion](https://youtu.be/nxNDo-7Fyfk) with the folks at the
 
 This what I think of mob programming. I realize that this reads like an appreciation post xD. [Reach out to me](/about#reach-out-to-me-at) if you have any thoughts.
 
-Side note: my appreciation for mob programming has nothing to do with the fact that the character in my profile picture (on my website, GitHub, twitter, etc.) is nicknamed Mob :)
+Side note: my appreciation for mob programming has nothing to do with the fact that the character in my profile picture (on my website, GitHub, Twitter, etc.) is nicknamed Mob :)
 
 Acknowledgements: Thank you, *Sathvik Srinivas*, for proofreading and suggesting improvements to this post.
 
 [^1]: We don't talk about Copilot here.
 [^2]: BTW this is such a great name :o
-[^3]: Did you know that in the highest-grossing superhero movie of all time, *Morbius*, the title character, *Morbius*, does not actually say "It's *Morbin* time" because it would not fit the character *Morbius* whose actual name is Dr. *Morbius*.
+[^3]: Did you know that in the highest-grossing superhero movie of all time, *Morbius*, the title character, *Morbius*, does not actually say "It's *Morbin* time" because it would not fit the character *Morbius* whose actual name is Dr. *Morbius*[.](https://knowyourmeme.com/memes/its-morbin-time)
 [^4]: As a small (and easy to explain) example, I used to skip straight to the answer section on stackoverflow. I learnt that it's useful to skim through the question to see if it's really what I need.
