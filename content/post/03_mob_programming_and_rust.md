@@ -60,7 +60,7 @@ This what I think of mob programming. I realize that this reads like an apprecia
 
 Side note: my appreciation for mob programming has nothing to do with the fact that the character in my profile picture (on my website, GitHub, twitter, etc.) is nicknamed Mob :)
 
-Acknowledgements: Thank you *Sathvik Srinivas* for proofreading and suggesting improvements to this post.
+Acknowledgements: Thank you, *Sathvik Srinivas*, for proofreading and suggesting improvements to this post.
 
 [^1]: We don't talk about Copilot here.
 [^2]: BTW this is such a great name :o
