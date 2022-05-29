@@ -64,5 +64,5 @@ Acknowledgements: Thank you, *Sathvik Srinivas*, for proofreading and suggesting
 
 [^1]: We don't talk about Copilot here.
 [^2]: BTW this is such a great name :o
-[^3]: Did you know that in the highest-grossing superhero movie of all time, *Morbius*, the title character, *Morbius*, does not actually say "It's *Morbin* time" because it would not fit the character *Morbius* whose actual name is Dr. *Morbius*[.](https://knowyourmeme.com/memes/its-morbin-time)
+[^3]: Did you know that in the highest-grossing superhero movie of all time, *Morbius*, the title character, *Morbius*, does not actually say "It's *Morbin* time" because it would not fit the character *Morbius* whose actual name is Dr. *Morbius*[?](https://knowyourmeme.com/memes/its-morbin-time)
 [^4]: As a small (and easy to explain) example, I used to skip straight to the answer section on stackoverflow. I learnt that it's useful to skim through the question to see if it's really what I need.
