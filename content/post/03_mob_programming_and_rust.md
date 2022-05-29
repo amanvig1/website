@@ -3,7 +3,7 @@ title: "Mob Programming and Rust"
 date: 2022-05-29T16:30:31+0530
 draft: false
 slug: "mob"
-summary: "Have you ever wanted to just think about what needs to be done and the code for it automagically gets written? Well, I have. In its ideal form, this is what pair/mob programming would do - the navigator(s) simply think about and express their idea of what needs to happen and the driver magically gets it done. In the real world though, this does not happen."
+summary: "Have you ever wanted to just think about what needs to be done and the code for it automagically gets written? Well, I have. In its ideal form, this is what pair/mob programming would do — the navigator(s) simply think about and express their idea of what needs to happen and the driver magically gets it done. In the real world though, this does not happen."
 tags:
  - Rust
  - Mob Programming
@@ -11,11 +11,11 @@ tags:
 
 # What is it?
 
-I see Mob Programming as an extension to [Pair Programming](https://en.wikipedia.org/wiki/Pair_programming) where two people work on the same code on the same computer - one *drives* the keyboard while the other *navigates* the driver. A *mob* is when you have three or more people working this way, each taking their turn to be the driver while the others navigate.
+I see Mob Programming as an extension to [Pair Programming](https://en.wikipedia.org/wiki/Pair_programming) where two people work on the same code on the same computer — one *drives* the keyboard while the other *navigates* the driver. A *mob* is when you have three or more people working this way, each taking their turn to be the driver while the others navigate.
 
-Have you ever wanted to just think about what needs to be done and the code for it automagically gets written? [^1] Well, I have. In its ideal form, this is what pair/mob programming would do - the navigator(s) simply think about and express their idea of what needs to happen and the driver magically gets it done.
+Have you ever wanted to just think about what needs to be done and the code for it automagically gets written? [^1] Well, I have. In its ideal form, this is what pair/mob programming would do — navigator(s) simply think about and express their idea of what needs to happen and the driver magically gets it done.
 In the real world though, this does not happen. The driver may have other ideas, the navigator(s)' idea may not make sense, the driver may not (yet!) know how to do what the navigator needs and all the other problems that come with communication between humans.
-What ends up happening is a lot of discussion, a lot of learning, a lot of teaching and all in all good times.
+What ends up happening is a lot of discussion, a lot of learning, a lot of teaching and all in all, good times.
 
 # But why?
 
@@ -32,7 +32,7 @@ If that was not enough to convince you, here's some other reasons how Mob Progra
 
 # It's Mobbin' time [^3]
 
-I have been a part of a mob for a few months now. At [Mobus Operandi](https://github.com/mobusoperandi) [^2], I'm a part of Mob Otter that works on [michie](https://github.com/mobusoperandi/michie) - a Rust macro that adds memoization to any function. I started when I knew nothing about Rust macros and when I was a beginner in Rust. I learnt a lot about Rust (declarative macros, procedural macros, `static`, generics, traits, `Any`, `Once` and a lot more), Git, Shell/bash, Nix and non-technical things like communication/collaboration, teaching and learning (I used to skip straight to the answer section in stackoverflow).
+I have been a part of a mob for a few months now. At [Mobus Operandi](https://github.com/mobusoperandi) [^2], I'm a part of Mob Otter that works on [michie](https://github.com/mobusoperandi/michie) — a Rust macro that adds memoization to any function. I started when I knew nothing about Rust macros and when I was a beginner in Rust. I learnt a lot about Rust (declarative macros, procedural macros, `static`, generics, traits, `Any`, `Once` and a lot more), Git, Shell/bash, Nix and non-technical things like communication/collaboration, teaching and learning (I used to skip straight to the answer section in stackoverflow).
 
 Thank you [Dawn](https://twitter.com/mightyiam) for inviting me to Mobus Operandi and thank you to everyone in Mob Otter for helping me grow <3.
 
@@ -40,9 +40,9 @@ Thank you [Dawn](https://twitter.com/mightyiam) for inviting me to Mobus Operand
 
 While I think mobbing is great, not everyone will like it and it may not fit in certain organizations.
 
-It also depends on your particular mob. Having one person who is significantly more advanced in the domain than the others may lead to that person being bored and not getting much out of it. On the other hand, having one person who is relatively new to the domain may lead to them slowing the mob down and they may feel insecure about it (our friend, the imposter syndrome, also does not help here). To alleviate this, Mobus Operandi has separate mobs for beginner, intermediate and advanced Rust programmers. That being said, mobs are all about learning - do not hesitate to join mobs that are working on things you haven't touched before. After all, you are not doing it alone and your mob will always be with you to help you learn!
+It also depends on your particular mob. Having one person who is significantly more advanced in the domain than the others may lead to that person being bored and not getting much out of it. On the other hand, having one person who is relatively new to the domain may lead to them slowing the mob down and they may feel insecure about it (our friend, the imposter syndrome, also does not help here). To alleviate this, Mobus Operandi has separate mobs for beginner, intermediate and advanced Rust programmers. That being said, mobs are all about learning. Do not hesitate to join mobs that are working on things you haven't touched before. After all, you are not doing it alone and your mob will always be with you to help you learn!
 
-Organizations where individual responsibility is encouraged and where not more than 2 people may be working on a thing at a time, mob programming may not fit. Places which move quickly and where everyone is working on separate components, it could be seen as a waste of time to have 3-5 people in the team on a single call for a couple of hours.
+Mob programming may not be a good fit for organizations where individual responsibility is encouraged, where not more than 2 people are working on a thing at a time and where moving quickly and efficiently is the top priority. It could be seen as a waste of time to have 3-5 people in the team on a single call for a couple of hours when each person is working on separate components.
 
 Mobbing also requires a certain level of commitment. For example, a mob that runs on weekdays for 2 hours each day means a commitment of 10 hours every week. Though this is small enough to be done along with a day job, it's a matter of personal choice.
 
@@ -59,6 +59,8 @@ Dawn had a [nice discussion](https://youtu.be/nxNDo-7Fyfk) with the folks at the
 This what I think of mob programming. I realize that this reads like an appreciation post xD. [Reach out to me](/about#reach-out-to-me-at) if you have any thoughts.
 
 Side note: my appreciation for mob programming has nothing to do with the fact that the character in my profile picture (on my website, GitHub, twitter, etc.) is nicknamed Mob :)
+
+Acknowledgements: Thank you Sathvik Srinivas for proofreading and suggesting corrections on this post.
 
 [^1]: We don't talk about Copilot here.
 [^2]: BTW this is such a great name :o
