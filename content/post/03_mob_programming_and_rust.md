@@ -32,7 +32,7 @@ If that was not enough to convince you, here's some other reasons how Mob Progra
 
 # It's Mobbin' time [^3]
 
-I have been a part of a mob for a few months now. At [Mobus Operandi](https://github.com/mobusoperandi) [^2], I'm a part of Mob Otter that works on [michie](https://github.com/mobusoperandi/michie) — a Rust macro that adds memoization to any function. I started when I knew nothing about Rust macros and when I was a beginner in Rust. I learnt a lot about Rust (declarative macros, procedural macros, `static`, generics, traits, `Any`, `Once` and a lot more), Git, Shell/bash, Nix and non-technical things like communication/collaboration, teaching and learning (I used to skip straight to the answer section in stackoverflow).
+I have been a part of a mob for a few months now. At [Mobus Operandi](https://github.com/mobusoperandi) [^2], I'm a part of Mob Otter that works on [michie](https://github.com/mobusoperandi/michie) — a Rust macro that adds memoization to any function. I started when I knew nothing about Rust macros and when I was a beginner in Rust. I learnt a lot about Rust (declarative macros, procedural macros, `static`, generics, traits, `Any`, `Once` and a lot more), Git, Shell/bash, Nix and non-technical things like communication/collaboration, teaching and learning [^4].
 
 Thank you [Dawn](https://twitter.com/mightyiam) for inviting me to Mobus Operandi and thank you to everyone in Mob Otter for helping me grow <3.
 
@@ -60,8 +60,9 @@ This what I think of mob programming. I realize that this reads like an apprecia
 
 Side note: my appreciation for mob programming has nothing to do with the fact that the character in my profile picture (on my website, GitHub, twitter, etc.) is nicknamed Mob :)
 
-Acknowledgements: Thank you Sathvik Srinivas for proofreading and suggesting corrections on this post.
+Acknowledgements: Thank you *Sathvik Srinivas* for proofreading and suggesting improvements to this post.
 
 [^1]: We don't talk about Copilot here.
 [^2]: BTW this is such a great name :o
 [^3]: Did you know that in the highest-grossing superhero movie of all time, *Morbius*, the title character, *Morbius*, does not actually say "It's *Morbin* time" because it would not fit the character *Morbius* whose actual name is Dr. *Morbius*.
+[^4]: As a small (and easy to explain) example, I used to skip straight to the answer section on stackoverflow. I learnt that it's useful to skim through the question to see if it's really what I need.
