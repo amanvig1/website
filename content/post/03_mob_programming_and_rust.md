@@ -27,7 +27,7 @@ If that was not enough to convince you, here's some other reasons how Mob Progra
 {{< /twitterdark >}}
 - The work that is produced is of a higher quality than what a single person could do. It's a combined product of the experiences of everyone in the mob.
 - You won't use a hacky solution or a workaround unless everyone agrees that that is the best way to do it.
-- If it's a side project or something else that you do in your free time, doing it together with a mob really gives you motivation. You look forward to doing it everyday with the mob.
+- If it's a side project or something else that you do in your free time, doing it together with a mob really gives you motivation. You look forward to doing it everyday with the mob. For me personally, mob programming was the only time I did something (almost) everyday, consistently for months [^5].
 
 
 # It's Mobbin' time [^3]
@@ -66,3 +66,4 @@ Acknowledgements: Thank you, *Sathvik Srinivas*, for proofreading and suggesting
 [^2]: BTW this is such a great name :o
 [^3]: Did you know that in the highest-grossing superhero movie of all time, *Morbius*, the title character, *Morbius*, does not actually say "It's *Morbin* time" because it would not fit the character *Morbius* whose actual name is Dr. *Morbius*[?](https://knowyourmeme.com/memes/its-morbin-time)
 [^4]: As a small (and easy to explain) example, I used to skip straight to the answer section on stackoverflow. I learnt that it's useful to skim through the question to see if it's really what I need.
+[^5]: This does not include things that have a clear incentive, such as school/university or job.
