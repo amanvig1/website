@@ -123,14 +123,6 @@ body.dark .social {
     --social-link-hover-border-color: #f78fa1;
 }
 
-.post-dets {
-    font-size: small;
-
-    .post-det-divider {
-        border-color: var(--text-color);
-    }
-}
-
 .well {
     h4 {
         font-size: small;
@@ -139,16 +131,6 @@ body.dark .social {
     h3 a.link {
         color: var(--link-color);
     }
-}
-
-.tags .tag {
-    color: var(--insignificant-text-color);
-    background: none;
-    border-style: solid;
-    border-color: var(--insignificant-text-color);
-    padding: 2px;
-    border-block-width: thin;
-    border-inline-width: thin;
 }
 
 code {
