@@ -1,6 +1,7 @@
 ---
 title: "Solving A Git Murder Mystery"
 date: 2020-03-15
+lastmod: 2021-05-18
 tags:
   - git
 draft: false

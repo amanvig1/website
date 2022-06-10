@@ -9,6 +9,13 @@ paginate = "10" # Number of posts per page
 # enable shortcodes like css.inline
 enableInlineShortcodes = true
 
+# automatically updates last modified based on git
+enableGitInfo = true
+
+
+[frontmatter]
+  lastmod = ['lastmod', ':git', 'date', 'publishDate']
+
 
 # from gruvhugo
 [taxonomies]

@@ -1,6 +1,7 @@
 ---
 title: "My old games"
 date: 2020-02-03
+lastmod: 2020-03-25
 tags:
  - gaming
 aliases:

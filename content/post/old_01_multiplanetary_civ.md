@@ -1,6 +1,7 @@
 ---
 title: "Multiplanetary civilisation?"
 date: 2020-01-17
+lastmod: 2020-03-25
 tags:
  - space
 slug: "multiplanetary"
