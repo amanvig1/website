@@ -89,6 +89,11 @@ enableGitInfo = true
     name       = "CV"
     url        = "cv.pdf"
 
+  [[menu.main]]
+    identifier = "research"
+    name       = "Research"
+    url        = "research"
+
 [permalinks]
   post = '/:section/:slug'
 
