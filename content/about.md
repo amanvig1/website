@@ -4,7 +4,7 @@ date: 2021-08-14T18:33:57+05:30
 draft: false
 ---
 
-Hi! I'm Samyak Sarnayak, a final year student at PES University and incoming software engineer at [Chaos Genius](https://chaosgenius.io/).
+Hi! I'm Samyak Sarnayak, a software tinkerer. Outside of programming, I'm still trying to figure out life.
 
 My current, and newfound, interest is in the field of programming languages and compiler design. However, I'm always open to learning something new in the broader field of systems programming; especially if it relates to performance optimizations, parallelism, containers or distributed systems.
 
@@ -14,7 +14,8 @@ Most of my projects are open sourced on [my GitHub](https://github.com/Samyak2/)
 
 - `samyak201 <AT> gmail <DOT> com`
 - `samyak <AT> chaosgenius <DOT> io` (only for queries related to Chaos Genius)
-- [Twitter](https://twitter.com/Samyak210) (I may be slow to respond here)
+- [Twitter](https://twitter.com/Samyak210) (I may be slow to respond here) (I may have moved on to mastodon)
+- [Mastodon](https://hachyderm.io/@samyak)
 
 ### More about me
 
@@ -42,6 +43,6 @@ Last updated: 26th December 2021
 [^3]: I call them "papers" and not "research papers" because they had no research in them :)
 [^4]: Here's a fun one: https://fashion.samyaks.xyz/ (works entirely client side on a static site).
 [^5]: The uni's course on this subject did not help at all in maintaining that interest :)
-[^6]: PESOS now continues to live in a different form at [UniFOSS](https://unifoss.github.io/). Join us if you too are an Indian university student interested in FOSS. Also, [here](https://atharvaraykar.me/education/building-a-community.html) is a great summary of what went down at PESOS, written by the person who (re-)started it.
+[^6]: PESOS now continues to live in a different form at [UniFOSS](https://unifoss.github.io/). Join us if you too are an Indian university student interested in FOSS. Also, [here](https://atharvaraykar.com/education/building-a-community.html) is a great summary of what went down at PESOS, written by the person who (re-)started it.
 [^7]: [This](https://github.com/adblockradio/adblockradio/pull/13) was my first external (to a repo not belonging to me or my friends) PR. It was merged two years later. [This one](https://github.com/bsoyka/mystery-egg/pull/31) was my first useful, external PR.
 [^8]: Hacktoberfest (2020 and 2021) helped significantly in bringing these contributors (especially the ones outside PES).
