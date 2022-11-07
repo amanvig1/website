@@ -62,10 +62,6 @@ enableGitInfo = true
     name = "mastodon"
     url = "https://hachyderm.io/@samyak"
 
-  [[params.social]]
-    name = "linkedin"
-    url  = "https://www.linkedin.com/in/samyaks"
-
 [params.style]
   custom_scss = ["/sass/custom.scss"]
 
