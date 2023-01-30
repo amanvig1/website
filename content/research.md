@@ -16,7 +16,7 @@ Peer reviewed
 Conference
 {{</smalltag>}}
 
-📜 Paper: [Available for free on ACM Digital Library](https://dl.acm.org/doi/10.1145/3491204.3527473)
+📜 Paper: [Available on ACM Digital Library](https://dl.acm.org/doi/10.1145/3491204.3527473)
 
 💾 Code: [GitHub](https://github.com/metonymic-smokey/JavaGC)
 
