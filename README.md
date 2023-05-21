@@ -2,6 +2,18 @@
 
 The code for my personal website. Warning: very chaotic, this was only made public to make use of GitHub pages.
 
+## Usage/Contributing
+
+Start a local dev server:
+```bash
+hugo server --buildDrafts
+```
+
+Make a new blog post (replace XX and filename):
+```bash
+hugo new content/post/XX_filename.md
+```
+
 ## Made using
 
 - [Hugo](https://gohugo.io/)
