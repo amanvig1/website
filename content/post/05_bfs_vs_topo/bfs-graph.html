@@ -1,0 +1,103 @@
+<div style="display: flex; justify-content: center;">
+  <div id="bfs-graph" style="width: 100%; height: 300px;"></div>
+</div>
+<div>
+  <input type="range" id="frame-num" name="frame-num" min="0">
+</div>
+<script>
+  const cy = cytoscape({
+    container: document.getElementById("bfs-graph"),
+    boxSelectionEnabled: false,
+    autoungrabify: true,
+    autounselectify: true,
+    elements: [
+      {
+        data: {id: 'a'},
+      },
+      {
+        data: {id: 'b'},
+      },
+      {
+        data: {id: 'c'},
+      },
+      {
+        data: {id: 'd'},
+      },
+      {
+        data: {id: 'ab', source: 'a', target: 'b'},
+      },
+      {
+        data: {id: 'ac', source: 'a', target: 'c'},
+      },
+      {
+        data: {id: 'cd', source: 'c', target: 'd'},
+      },
+    ],
+    style: [
+      {
+        selector: 'node',
+        style: {
+          'background-color': '#8785A2',
+          'color': '#F6F6F6',
+          'label': 'data(id)',
+        }
+      },
+      {
+        selector: 'edge',
+        style: {
+          'width': 3,
+          'line-color': '#F6F6F6',
+          'target-arrow-color': '#F6F6F6',
+          'target-arrow-shape': 'triangle',
+          'curve-style': 'bezier'
+        }
+      },
+      {
+        selector: '.traversed',
+        style: {
+          'background-color': '#FFC7C7',
+          'line-color': '#FFC7C7',
+        },
+      }
+    ],
+  });
+  cy.fit();
+  const origBoundingBox = cy.elements().boundingBox();
+  cy.layout({
+    name: 'breadthfirst',
+    roots: cy.$('#a'),
+    animate: true,
+    spacingFactor: 1.4,
+    boundingBox: {
+      x1: origBoundingBox.y1,
+      y1: origBoundingBox.x1,
+      x2: origBoundingBox.y2,
+      y2: origBoundingBox.x2
+    },
+    transform: (_node, position) => {
+      return {x: position.y, y: position.x}
+    },
+  }).run();
+  const bfsRes = cy.elements().breadthFirstSearch(cy.$('#a'));
+  const pathLen = (bfsRes.path.length - 1) / 2;
+  console.log(bfsRes);
+  const slider = document.getElementById("frame-num");
+  slider.max = pathLen;
+  slider.value = 0;
+  const el = bfsRes.path[0];
+  console.log(el);
+  el.addClass("traversed");
+  slider.addEventListener("input", () => {
+    cy.elements().removeClass("traversed");
+    console.log(slider.value);
+    for (let i = 0; i <= slider.value; ++i) {
+      const pathPos = 2 * i - 1;
+      const nodePos = 2 * i;
+      console.log(pathPos, nodePos);
+      if (pathPos >= 0) {
+        bfsRes.path[pathPos].addClass("traversed");
+      }
+      bfsRes.path[nodePos].addClass("traversed");
+    }
+  });
+</script>
