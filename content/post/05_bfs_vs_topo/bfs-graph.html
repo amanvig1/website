@@ -1,7 +1,7 @@
 <div style="display: flex; justify-content: center;">
   <div id="bfs-graph" style="width: 100%; max-width 500px; height: 300px;"></div>
 </div>
-<div style="display: flex; justify-content: center;">
+<div style="display: flex; justify-content: center; height: 2rem; align-items: center;">
   <button class="play-button playing" id="play-button"></button>
   <input type="range" id="frame-num" name="frame-num" min="-1">
 </div>
@@ -33,6 +33,8 @@
     boxSelectionEnabled: false,
     autoungrabify: true,
     autounselectify: true,
+    minZoom: 0.1,
+    maxZoom: 5,
     elements: [
       {
         data: {id: '1', name: 'pest'},
@@ -62,32 +64,89 @@
         data: {id: '9', name: 'syn'},
       },
       {
-        data: {id: '12', source: '1', target: '2'},
+          "data": {
+              "id": "21",
+              "source": "2",
+              "target": "1"
+          }
       },
       {
-        data: {id: '13', source: '1', target: '3'},
+          "data": {
+              "id": "31",
+              "source": "3",
+              "target": "1"
+          }
       },
       {
-        data: {id: '14', source: '1', target: '4'},
+          "data": {
+              "id": "41",
+              "source": "4",
+              "target": "1"
+          }
       },
       {
-        data: {id: '23', source: '2', target: '3'},
+          "data": {
+              "id": "32",
+              "source": "3",
+              "target": "2"
+          }
       },
       {
-        data: {id: '25', source: '2', target: '5'},
+          "data": {
+              "id": "52",
+              "source": "5",
+              "target": "2"
+          }
       },
       {
-        data: {id: '26', source: '2', target: '6'},
+          "data": {
+              "id": "62",
+              "source": "6",
+              "target": "2"
+          }
       },
       {
-        data: {id: '47', source: '4', target: '7'},
+          "data": {
+              "id": "74",
+              "source": "7",
+              "target": "4"
+          }
       },
       {
-        data: {id: '48', source: '4', target: '8'},
+          "data": {
+              "id": "84",
+              "source": "8",
+              "target": "4"
+          }
       },
       {
-        data: {id: '49', source: '4', target: '9'},
+          "data": {
+              "id": "78",
+              "source": "7",
+              "target": "8"
+          }
       },
+      {
+          "data": {
+              "id": "79",
+              "source": "7",
+              "target": "9"
+          }
+      },
+      {
+          "data": {
+              "id": "89",
+              "source": "8",
+              "target": "9"
+          }
+      },
+      {
+          "data": {
+              "id": "94",
+              "source": "9",
+              "target": "4"
+          }
+      }
     ],
     style: [
       {
@@ -96,8 +155,9 @@
           'background-color': '#8785A2',
           'color': '#F6F6F6',
           'label': 'data(name)',
-          'text-valign': 'bottom',
-          'text-halign': 'center',
+          'text-valign': 'center',
+          'text-halign': 'right',
+          'text-margin-x': '3px',
         }
       },
       {
@@ -122,6 +182,17 @@
     ],
   });
   const startingEl = "#1";
+  const traverseStarting = "#8";
+  cy.$("#1").style({
+    'text-valign': 'center',
+    'text-halign': 'left',
+    'text-margin-x': '-5px',
+  });
+  cy.$("#2,#3,#4").style({
+    'text-valign': 'top',
+    'text-halign': 'center',
+    'text-margin-x': '0',
+  });
   cy.fit();
   const origBoundingBox = cy.elements().boundingBox();
   cy.layout({
@@ -139,35 +210,57 @@
       return {x: position.y, y: position.x}
     },
   }).run();
-  const bfsRes = cy.elements().breadthFirstSearch(cy.$(startingEl));
-  const pathLen = (bfsRes.path.length - 1) / 2;
-  console.log(bfsRes);
-  const slider = document.getElementById("frame-num");
-  slider.max = pathLen;
-  slider.value = -1;
-  const sliderHandler = () => {
-    cy.elements().removeClass("traversed");
-    console.log(slider.value);
-    for (let i = 0; i <= slider.value; ++i) {
-      const pathPos = 2 * i - 1;
-      const nodePos = 2 * i;
-      if (pathPos >= 0) {
-        bfsRes.path[pathPos].addClass("traversed");
-      }
-      bfsRes.path[nodePos].addClass("traversed");
-    }
-  };
-  slider.addEventListener("input", sliderHandler);
-  const playBtn = document.getElementById("play-button");
+  cy.nodes().on("tap", (e) => {
+    console.log("reseting sim to tap");
+    resetSim(e.target);
+  });
+  let interval = null;
+  let previousSliderHandler = null;
   let paused = false;
+  const slider = document.getElementById("frame-num");
+  const playBtn = document.getElementById("play-button");
   playBtn.addEventListener("click", () => {
     paused = !paused;
     playBtn.classList.toggle("playing");
   });
-  setInterval(() => {
-    if (!paused) {
-      slider.value = (Number(slider.value) + 2) % (pathLen + 2) - 1;
-      sliderHandler();
+  const resetSim = (traverseStartEl) => {
+    if (interval !== null) {
+      clearInterval(interval);
     }
-  }, 1000);
+    if (previousSliderHandler !== null) {
+      slider.removeEventListener("input", previousSliderHandler);
+    }
+    const bfsRes = cy.elements().breadthFirstSearch({
+      root: traverseStartEl,
+      directed: true,
+    });
+    const pathLen = (bfsRes.path.length - 1) / 2;
+    console.log("got bfs path", pathLen, bfsRes);
+    slider.max = pathLen;
+    slider.value = 0;
+    const sliderHandler = () => {
+      cy.elements().removeClass("traversed");
+      // console.log(slider.value);
+      for (let i = 0; i <= slider.value; ++i) {
+        const pathPos = 2 * i - 1;
+        const nodePos = 2 * i;
+        if (pathPos >= 0) {
+          bfsRes.path[pathPos].addClass("traversed");
+        }
+        bfsRes.path[nodePos].addClass("traversed");
+      }
+    };
+    sliderHandler();
+    slider.addEventListener("input", sliderHandler);
+    previousSliderHandler = sliderHandler;
+    paused = false;
+    playBtn.classList.add("playing");
+    interval = setInterval(() => {
+      if (!paused) {
+        slider.value = (Number(slider.value) + 2) % (pathLen + 2) - 1;
+        sliderHandler();
+      }
+    }, 1000);
+  };
+  resetSim(cy.$(traverseStarting));
 </script>
