@@ -30,8 +30,10 @@ In this graph search algorithm, we visit all the neighbours of the node in arbit
 
 Here's a visualization of BFS on a graph of project dependencies. The edges indicate dependents i.e, `pest` depends on `serde_json`, etc.
 Feel free to pause and explore the order in which nodes are visited. You can click on a node to start BFS from that node.
+
+{{% include "05_bfs_vs_topo/common.html" %}}
 {{% include "05_bfs_vs_topo/bfs-graph.html" %}}
 
 ## Topological sort
 
-
+{{% include "05_bfs_vs_topo/topo-graph.html" %}}

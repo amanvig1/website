@@ -5,212 +5,18 @@
   <button class="play-button playing" id="play-button"></button>
   <input type="range" id="frame-num" name="frame-num" min="-1">
 </div>
-<style>
-  .play-button {
-    --wide: 10px;
-    border: 0;
-    background: transparent;
-    box-sizing: border-box;
-    width: 0;
-    height: calc(var(--wide)*2);
-    border-color: transparent transparent transparent #F6F6F6;
-    transition: 100ms all ease;
-    cursor: pointer;
-    border-style: solid;
-    border-width: var(--wide) 0 var(--wide) calc(var(--wide)*60/37);
-  }
-  .play-button.playing {
-    border-style: double;
-    border-width: 0px 0 0px calc(var(--wide)*60/37);
-  }
-  .play-button:hover {
-    border-color: transparent transparent transparent #FFE2E2;
-  }
-</style>
 <script>
   const cy = cytoscape({
     container: document.getElementById("bfs-graph"),
-    boxSelectionEnabled: false,
-    autoungrabify: true,
-    autounselectify: true,
-    minZoom: 0.1,
-    maxZoom: 5,
-    elements: [
-      {
-        data: {id: '1', name: 'pest'},
-      },
-      {
-        data: {id: '2', name: 'serde_json'},
-      },
-      {
-        data: {id: '3', name: 'serde'},
-      },
-      {
-        data: {id: '4', name: 'thiserror'},
-      },
-      {
-        data: {id: '5', name: 'itoa'},
-      },
-      {
-        data: {id: '6', name: 'ryu'},
-      },
-      {
-        data: {id: '7', name: 'proc-macro2'},
-      },
-      {
-        data: {id: '8', name: 'quote'},
-      },
-      {
-        data: {id: '9', name: 'syn'},
-      },
-      {
-          "data": {
-              "id": "21",
-              "source": "2",
-              "target": "1"
-          }
-      },
-      {
-          "data": {
-              "id": "31",
-              "source": "3",
-              "target": "1"
-          }
-      },
-      {
-          "data": {
-              "id": "41",
-              "source": "4",
-              "target": "1"
-          }
-      },
-      {
-          "data": {
-              "id": "32",
-              "source": "3",
-              "target": "2"
-          }
-      },
-      {
-          "data": {
-              "id": "52",
-              "source": "5",
-              "target": "2"
-          }
-      },
-      {
-          "data": {
-              "id": "62",
-              "source": "6",
-              "target": "2"
-          }
-      },
-      {
-          "data": {
-              "id": "74",
-              "source": "7",
-              "target": "4"
-          }
-      },
-      {
-          "data": {
-              "id": "84",
-              "source": "8",
-              "target": "4"
-          }
-      },
-      {
-          "data": {
-              "id": "78",
-              "source": "7",
-              "target": "8"
-          }
-      },
-      {
-          "data": {
-              "id": "79",
-              "source": "7",
-              "target": "9"
-          }
-      },
-      {
-          "data": {
-              "id": "89",
-              "source": "8",
-              "target": "9"
-          }
-      },
-      {
-          "data": {
-              "id": "94",
-              "source": "9",
-              "target": "4"
-          }
-      }
-    ],
-    style: [
-      {
-        selector: 'node',
-        style: {
-          'background-color': '#8785A2',
-          'color': '#F6F6F6',
-          'label': 'data(name)',
-          'text-valign': 'center',
-          'text-halign': 'right',
-          'text-margin-x': '3px',
-        }
-      },
-      {
-        selector: 'edge',
-        style: {
-          'width': 3,
-          'line-color': '#F6F6F6',
-          'target-arrow-color': '#F6F6F6',
-          'target-arrow-shape': 'triangle',
-          'curve-style': 'bezier',
-          'line-opacity': 0.5,
-        }
-      },
-      {
-        selector: '.traversed',
-        style: {
-          'background-color': '#FFC7C7',
-          'line-color': '#FFC7C7',
-          'target-arrow-color': '#FFC7C7',
-        },
-      }
-    ],
+    ...graphConfig,
   });
-  const textColorDark = "#F6F6F6";
-  const textColorLight = "#454545";
-  const startingEl = "#1";
-  const traverseStarting = "#6";
-  cy.$("#1").style({
-    'text-valign': 'center',
-    'text-halign': 'left',
-    'text-margin-x': '-5px',
-  });
-  cy.$("#2,#3,#4").style({
-    'text-valign': 'top',
-    'text-halign': 'center',
-    'text-margin-x': '0',
-  });
+  cy.$("#1").style(rootConfig);
+  cy.$("#2,#3,#4").style(levelOneConfig);
   cy.fit();
   const origBoundingBox = cy.elements().boundingBox();
   cy.layout({
-    name: 'breadthfirst',
     roots: cy.$(startingEl),
-    animate: true,
-    spacingFactor: 1.7,
-    boundingBox: {
-      x1: origBoundingBox.y1,
-      y1: origBoundingBox.x1,
-      x2: origBoundingBox.y2,
-      y2: origBoundingBox.x2
-    },
-    transform: (_node, position) => {
-      return {x: position.y, y: position.x}
-    },
+    ...layoutConfig(origBoundingBox),
   }).run();
   cy.nodes().on("tap", (e) => {
     console.log("reseting sim to tap");
@@ -265,22 +71,4 @@
     }, 1000);
   };
   resetSim(cy.$(traverseStarting));
-  function customThemeCallback(theme) {
-    console.log(theme);
-    let textColor;
-    if (theme == 'dark') {
-      textColor = textColorDark;
-    } else {
-      textColor = textColorLight;
-    }
-    cy.$('node').style({
-      'color': textColor
-    });
-    cy.$('edge').style({
-      'line-color': textColor,
-      'target-arrow-color': textColor,
-    });
-    playBtn.style.borderLeftColor = textColor;
-  }
-  customThemeCallback(currentTheme);
 </script>
