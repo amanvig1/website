@@ -181,8 +181,10 @@
       }
     ],
   });
+  const textColorDark = "#F6F6F6";
+  const textColorLight = "#454545";
   const startingEl = "#1";
-  const traverseStarting = "#8";
+  const traverseStarting = "#6";
   cy.$("#1").style({
     'text-valign': 'center',
     'text-halign': 'left',
@@ -263,4 +265,22 @@
     }, 1000);
   };
   resetSim(cy.$(traverseStarting));
+  function customThemeCallback(theme) {
+    console.log(theme);
+    let textColor;
+    if (theme == 'dark') {
+      textColor = textColorDark;
+    } else {
+      textColor = textColorLight;
+    }
+    cy.$('node').style({
+      'color': textColor
+    });
+    cy.$('edge').style({
+      'line-color': textColor,
+      'target-arrow-color': textColor,
+    });
+    playBtn.style.borderLeftColor = textColor;
+  }
+  customThemeCallback(currentTheme);
 </script>
