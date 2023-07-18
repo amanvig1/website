@@ -31,6 +31,54 @@
     paused2 = !paused2;
     playBtn2.classList.toggle("playing");
   });
+  function getSubgraph(cy2, root) {
+    let toTraverse = root.outgoers();
+    let subgraph = root.union(toTraverse);
+    while (toTraverse.length > 0) {
+      const consider = toTraverse[0];
+      toTraverse = toTraverse.splice(1);
+      if (consider.isNode()) {
+        const out = consider.outgoers();
+        toTraverse = toTraverse.concat(out);
+        subgraph = subgraph.union(out);
+      }
+    }
+    // console.log("subgraph", subgraph.map(e => `${e.id()} - ${e.data("name")}`));
+    return subgraph;
+  }
+  function topoSort(cy2, root) {
+    const path = [];
+    let subgraph = getSubgraph(cy2, root);
+    let free = [root];
+    while (free.length > 0) {
+      const consider = free[0];
+      // console.log("consider", consider.data("name"));
+      free = free.splice(1);
+      path.push(consider);
+      const outgoers = consider.outgoers();
+      // console.log("outgoers", outgoers.map(e => `${e.id()} - ${e.data("name")}`));
+      subgraph = subgraph.filter(e => e.id() != consider.id());
+      for (const outgoer of outgoers) {
+        if (outgoer.isEdge()) {
+          path.push(outgoer);
+          // console.log("removing edge", outgoer.id());
+          subgraph = subgraph.filter((e) => e.id() != outgoer.id());
+        }
+      }
+      for (const outgoer of outgoers) {
+        if (outgoer.isNode()) {
+          // console.log("subgraph", subgraph.map(e => `${e.id()} - ${e.data("name")}`));
+          const incomingEdges = subgraph.edgesTo(outgoer);
+          // console.log("incomingEdges", outgoer.data("name"), incomingEdges.map(e => `${e.id()}`));
+          if (incomingEdges.length == 0) {
+            free.push(outgoer);
+          }
+        }
+      }
+    }
+    console.log("path", path);
+    return path;
+  }
   const resetSim2 = (traverseStartEl) => {
     if (interval2 !== null) {
       clearInterval(interval2);
@@ -38,24 +86,20 @@
     if (previousSliderHandler2 !== null) {
       slider2.removeEventListener("input", previousSliderHandler2);
     }
-    const dfsRes = cy2.elements().depthFirstSearch({
-      root: traverseStartEl,
-      directed: true,
-    });
-    const pathLen = (dfsRes.path.length - 1) / 2;
-    console.log("got dfs path", pathLen, dfsRes);
+    const path = topoSort(cy2, traverseStartEl);
+    const pathNodesOnly = path.filter(e => e.isNode());
+    const pathLen = pathNodesOnly.length - 1;
+    console.log("got topo path", pathLen, path);
     slider2.max = pathLen;
     slider2.value = 0;
     const sliderHandler = () => {
       cy2.elements().removeClass("traversed");
       // console.log(slider.value);
       for (let i = 0; i <= slider2.value; ++i) {
-        const pathPos = 2 * i - 1;
-        const nodePos = 2 * i;
-        if (pathPos >= 0) {
-          dfsRes.path[pathPos].addClass("traversed");
-        }
-        dfsRes.path[nodePos].addClass("traversed");
+        const node = pathNodesOnly[i];
+        cy2.$(`#${node.id()}`).addClass("traversed");
+        const edges = node.outgoers().filter(e => e.isEdge());
+        edges.addClass("traversed");
       }
     };
     sliderHandler();
