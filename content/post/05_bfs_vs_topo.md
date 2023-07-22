@@ -28,7 +28,7 @@ At the time, it seemed that a simple breadth-first search will give me all the n
 
 In this graph search algorithm, we visit all the neighbours of the node in an arbitrary order. Let's consider the direct neighbours as the first level and the neighbours of the neighbours as the second level and so on. BFS will visit all nodes on the first level before visiting all nodes on the second level and so on.
 
-Here's a visualization of BFS on a graph of project dependencies. The edges indicate dependents, i.e, `pest` depends on `serde_json`, etc.
+Here's a visualization of BFS on a graph of project dependencies. The edges indicate dependents, i.e., `pest` depends on `serde_json`, etc.
 Feel free to pause and explore the order in which nodes are visited. You can click on a node to start BFS from that node.
 
 {{% include "05_bfs_vs_topo/common.html" %}}
@@ -41,7 +41,7 @@ On a dependency graph, this is exactly the order we need.
 
 There are many different algorithms to arrive at a topological ordering. Also, a graph can have more than one valid topological ordering.
 
-Here's a visualization of one such topological sorting algorithm[^1] on a graph of project dependencies. The edges indicate dependents, i.e, `pest` depends on `serde_json`, etc.
+Here's a visualization of one such topological sorting algorithm[^1] on a graph of project dependencies. The edges indicate dependents, i.e., `pest` depends on `serde_json`, etc.
 Feel free to pause and explore the order in which nodes are visited. You can click on a node to start topological sort on that node.
 Note that we are not performing topological sort on the whole graph but only the *subgraph* that is accessible from the selected node.
 
