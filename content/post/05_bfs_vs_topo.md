@@ -36,4 +36,37 @@ Feel free to pause and explore the order in which nodes are visited. You can cli
 
 ## Topological sort
 
+A topological sorting is an order of the nodes of the graph such that a node is visited only after all nodes that connect to that node are visited.
+On a dependency graph, this is exactly the order we need.
+
+There are many different algorithms to arrive at a topological ordering. Also, a graph can have more than one valid topological ordering.
+
+Here's a visualization of one such topological sorting algorithm [^1] on a graph of project dependencies. The edges indicate dependents i.e, `pest` depends on `serde_json`, etc.
+Feel free to pause and explore the order in which nodes are visited. You can click on a node to start topological sort on that node.
+Note that we are not performing topological sort on the whole graph, but only the *subgraph* that is accessible from the selected node.
+
 {{% include "05_bfs_vs_topo/topo-graph.html" %}}
+
+## BFS vs Topological sort - where do they differ?
+
+As we see from the simulations above, when we perform BFS and topological sort starting with the node `ryu`, we get the same path (or ordering) in both cases.
+
+So it can seem like BFS, which is much simpler to implement, works when you actually need a topological ordering. Depending on your graph, it may even work for all nodes in your graph. But of course, BFS makes no guarantees that all dependencies are completed before visiting a node. It just happened to work for that particular graph or that particular node.
+
+<!-- With graph algorithms especially, it's important to test your algorithms on graphs beyond your use case. Things may *look* right but will fail in unexpected ways. -->
+
+Let's see an example of this. Click on the `quote` node on the graphs above. Or use this button to do so.
+
+{{% include "05_bfs_vs_topo/demo-button-1.html" %}}
+
+The order in which BFS visits the nodes is obviously wrong! It visits `thiserror` before `syn`. That's equivalent to compiling a package before all of it's dependencies are compiled. The topological sort is correct, because by definition it needs to visit all the dependencies before visiting a node.
+
+Some of the other nodes in the example graph show this behavior too. For example, `serde` and `proc-macro2`. So why did I use BFS for this use case in the first place?
+
+## When are they the same?
+
+In some cases though, you can get BFS to give you the same ordering of nodes that a full fledged topological sort can. Since BFS is much easier to implement, it can be a good choice.
+
+
+
+[^1]: [Kahn's algorithm](https://en.wikipedia.org/wiki/Topological_sorting#Kahn's_algorithm) but only on the subgraph accessible from the selected node.

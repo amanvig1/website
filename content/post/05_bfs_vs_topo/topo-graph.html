@@ -4,6 +4,7 @@
 <div style="display: flex; justify-content: center; height: 2rem; align-items: center;">
   <button class="play-button playing" id="play-button-2"></button>
   <input type="range" id="frame-num-2" name="frame-num-2" min="-1">
+  <button class="generic-button" id="restart-button-2">reset</button>
 </div>
 <script>
   const cy2 = cytoscape({
@@ -103,7 +104,11 @@
       }
     };
     sliderHandler();
-    slider2.addEventListener("input", sliderHandler);
+    slider2.addEventListener("input", () => {
+      paused2 = true;
+      playBtn2.classList.remove("playing");
+      sliderHandler();
+    });
     previousSliderHandler2 = sliderHandler;
     paused2 = false;
     playBtn2.classList.add("playing");
@@ -115,6 +120,10 @@
     }, 1000);
   };
   resetSim2(cy2.$(traverseStarting));
+  document.getElementById("restart-button-2").addEventListener("click", () => {
+    resetSim2(cy2.$(traverseStarting));
+    cy2.fit();
+  });
   function customThemeCallback(theme) {
     console.log(theme);
     let textColor;
