@@ -67,6 +67,18 @@ Some of the other nodes in the example graph show this behavior too. For example
 
 In some cases though, you can get BFS to give you the same ordering of nodes that a full fledged topological sort can. Since BFS is much easier to implement, it can be a good choice.
 
+Here's an example graph that shows this behavior. This is simple BFS, but it visits the nodes in the correct order.
 
+{{% include "05_bfs_vs_topo/bfs-graph-3.html" %}}
+
+The requirement for this behavior is that all the nodes must be connected to only their *direct dependents*. If any node is connected to both a node and a connection of that node, BFS will not work.
+
+## Conclusion
+
+Comparing BFS and Topological sort is like comparing an apple and a bicycle. Though, sometimes you don't need to go out to a restaurant when an apple in the fridge will do.
+
+That is to say, in some cases BFS will do what you need without having to implement topological sort.
+
+Thank you for reading!
 
 [^1]: [Kahn's algorithm](https://en.wikipedia.org/wiki/Topological_sorting#Kahn's_algorithm) but only on the subgraph accessible from the selected node.
