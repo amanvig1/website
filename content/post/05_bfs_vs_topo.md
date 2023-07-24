@@ -1,6 +1,6 @@
 ---
 title: "Turns out that BFS is not the same as topological sort"
-date: 2023-05-21T20:51:42+05:30
+date: 2023-07-22
 slug: "bfs-topo"
 tags:
 - algo
